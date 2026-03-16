@@ -123,6 +123,22 @@ module staticWebApp 'modules/staticwebapp.bicep' = {
   }
 }
 
+// Key Vault and Security Module
+module keyVault 'modules/keyvault.bicep' = {
+  name: 'keyvault-deployment'
+  scope: rg
+  params: {
+    keyVaultName: naming.outputs.keyVaultName
+    location: location
+    tags: tags
+    functionAppPrincipalId: functions.outputs.functionAppPrincipalId
+    cosmosAccountName: cosmos.outputs.cosmosAccountName
+    storageAccountName: storage.outputs.storageAccountName
+    enableSoftDelete: true
+    softDeleteRetentionInDays: 90
+  }
+}
+
 // Outputs
 output resourceGroupName string = rg.name
 output location string = location
@@ -144,3 +160,5 @@ output appInsightsConnectionString string = functions.outputs.appInsightsConnect
 output staticWebAppName string = staticWebApp.outputs.staticWebAppName
 output staticWebAppUrl string = staticWebApp.outputs.staticWebAppUrl
 output staticWebAppHostName string = staticWebApp.outputs.staticWebAppDefaultHostName
+output keyVaultName string = keyVault.outputs.keyVaultName
+output keyVaultUri string = keyVault.outputs.keyVaultUri

@@ -20,7 +20,7 @@ param locationShortCode string = 'krc' // koreacentral
 
 output storageAccountName string = toLower(replace('st${baseName}${environment}${locationShortCode}', '-', ''))
 output cosmosDbAccountName string = toLower('cosmos-${baseName}-${environment}-${locationShortCode}')
-output keyVaultName string = toLower('kv-${baseName}-${environment}-${locationShortCode}')
+output keyVaultName string = toLower('kv${baseName}${environment}${locationShortCode}')
 output functionAppName string = toLower('func-${baseName}-${environment}-${locationShortCode}')
 output appServicePlanName string = toLower('asp-${baseName}-${environment}-${locationShortCode}')
 output staticWebAppName string = toLower('swa-${baseName}-${environment}-${locationShortCode}')
