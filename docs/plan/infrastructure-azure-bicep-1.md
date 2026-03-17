@@ -172,18 +172,18 @@ All resources will be deployed to the `koreacentral` region within the `kaist-ai
 
 **GOAL-007**: Implement Azure Key Vault and configure managed identities for secure resource access
 
-| Task     | Description                                                                                              | Completed | Date |
-| -------- | -------------------------------------------------------------------------------------------------------- | --------- | ---- |
-| TASK-049 | Create `infra/modules/keyvault.bicep` module for Key Vault                                               |           |      |
-| TASK-050 | Create Key Vault with Standard SKU and soft delete enabled (90-day retention)                            |           |      |
-| TASK-051 | Enable Azure RBAC authorization for Key Vault access                                                     |           |      |
-| TASK-052 | Grant Function App managed identity "Key Vault Secrets User" role on Key Vault                           |           |      |
-| TASK-053 | Create secret for Cosmos DB connection string                                                            |           |      |
-| TASK-054 | Create secret for Storage Account connection string                                                      |           |      |
-| TASK-055 | Create placeholder secret for future Gemini API key                                                      |           |      |
-| TASK-056 | Grant Function App managed identity "Storage Blob Data Contributor" role on Storage Account              |           |      |
-| TASK-057 | Grant Function App managed identity "Cosmos DB Built-in Data Contributor" role on Cosmos DB              |           |      |
-| TASK-058 | Output Key Vault name, URI, and secret names                                                             |           |      |
+| Task     | Description                                                                                              | Completed | Date       |
+| -------- | -------------------------------------------------------------------------------------------------------- | --------- | ---------- |
+| TASK-049 | Create `infra/modules/keyvault.bicep` module for Key Vault                                               | ✓         | 2026-03-12 |
+| TASK-050 | Create Key Vault with Standard SKU and soft delete enabled (90-day retention)                            | ✓         | 2026-03-12 |
+| TASK-051 | Enable Azure RBAC authorization for Key Vault access                                                     | ✓         | 2026-03-12 |
+| TASK-052 | Grant Function App managed identity "Key Vault Secrets User" role on Key Vault                           | ✓         | 2026-03-12 |
+| TASK-053 | Create secret for Cosmos DB connection string                                                            | ✓         | 2026-03-12 |
+| TASK-054 | Create secret for Storage Account connection string                                                      | ✓         | 2026-03-12 |
+| TASK-055 | Create placeholder secret for future Gemini API key                                                      | ✓         | 2026-03-12 |
+| TASK-056 | Grant Function App managed identity "Storage Blob Data Contributor" role on Storage Account              | ✓         | 2026-03-12 |
+| TASK-057 | Grant Function App managed identity "Cosmos DB Built-in Data Contributor" role on Cosmos DB              | ✓         | 2026-03-12 |
+| TASK-058 | Output Key Vault name, URI, and secret names                                                             | ✓         | 2026-03-12 |
 
 ### Implementation Phase 8: Monitoring Infrastructure - Application Insights
 
