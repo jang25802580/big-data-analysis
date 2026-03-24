@@ -26,6 +26,9 @@ param cosmosEndpoint string
 @description('Cosmos DB database name')
 param cosmosDatabaseName string
 
+@description('Key Vault name for secret references')
+param keyVaultName string
+
 @description('CORS allowed origins')
 param corsAllowedOrigins array = [
   'https://*.azurestaticapps.net'
@@ -156,6 +159,14 @@ resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
         {
           name: 'COSMOS_DATABASE_NAME'
           value: cosmosDatabaseName
+        }
+        {
+          name: 'GOOGLE_API_KEY'
+          value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/gemini-api-key/)'
+        }
+        {
+          name: 'GOOGLE_CLOUD_PROJECT'
+          value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/google-cloud-project/)'
         }
         {
           name: 'WEBSITE_RUN_FROM_PACKAGE'

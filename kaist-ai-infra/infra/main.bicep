@@ -102,6 +102,7 @@ module functions 'modules/functions.bicep' = {
     tags: tags
     cosmosEndpoint: cosmos.outputs.cosmosEndpoint
     cosmosDatabaseName: cosmos.outputs.databaseName
+    keyVaultName: naming.outputs.keyVaultName
     corsAllowedOrigins: [
       'https://*.azurestaticapps.net'
       'http://localhost:3000'
