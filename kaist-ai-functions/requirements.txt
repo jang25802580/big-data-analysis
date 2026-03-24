@@ -1,0 +1,23 @@
+# Azure Functions runtime
+azure-functions>=1.21.3
+
+# Azure SDK
+azure-storage-blob>=12.23.0
+azure-cosmos>=4.7.0
+azure-identity>=1.17.0
+azure-keyvault-secrets>=4.8.0
+
+# LangChain + Google Generative AI
+langchain>=0.3.14
+langchain-community>=0.3.14
+langchain-google-genai>=2.0.7
+
+# PDF processing
+PyMuPDF>=1.24.0
+
+# Data models & settings
+pydantic>=2.7.0
+pydantic-settings>=2.4.0
+
+# Retry logic
+tenacity>=8.3.0
