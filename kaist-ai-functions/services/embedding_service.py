@@ -4,26 +4,19 @@ from __future__ import annotations
 
 import logging
 
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from shared.config import get_config
+from shared.embeddings import get_embeddings
 from shared.exceptions import EmbeddingError
 
 logger = logging.getLogger(__name__)
-
-_EMBEDDING_MODEL = "models/text-embedding-004"
 
 
 class EmbeddingService:
     """Wraps GoogleGenerativeAIEmbeddings for batch text embedding."""
 
     def __init__(self) -> None:
-        config = get_config()
-        self._embeddings = GoogleGenerativeAIEmbeddings(
-            model=_EMBEDDING_MODEL,
-            google_api_key=config.GOOGLE_API_KEY,
-        )
+        self._embeddings = get_embeddings()
 
     def ping(self) -> None:
         """Verify Gemini embedding API is reachable by embedding a short probe string."""
@@ -50,7 +43,7 @@ class EmbeddingService:
             return []
         try:
             vectors = self._embeddings.embed_documents(texts)
-            logger.info("Embedded %d texts with model %s", len(texts), _EMBEDDING_MODEL)
+            logger.info("Embedded %d texts", len(texts))
             return vectors
         except Exception as exc:
             raise EmbeddingError(f"Embedding failed for {len(texts)} texts: {exc}") from exc

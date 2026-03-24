@@ -22,6 +22,12 @@ class AppConfig(BaseSettings):
     GOOGLE_CLOUD_PROJECT: str = Field(
         default="", description="GCP project ID (optional for API-key auth)"
     )
+    LLM_MODEL: str = Field(
+        default="gemini-2.0-flash", description="Gemini model name for LLM (e.g. gemini-2.0-flash)"
+    )
+    EMBEDDING_MODEL: str = Field(
+        default="models/text-embedding-004", description="Gemini model name for embeddings"
+    )
 
     # Azure Cosmos DB
     COSMOS_ENDPOINT: str = Field(..., description="Cosmos DB account endpoint URL")

@@ -5,6 +5,8 @@
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "GOOGLE_API_KEY": "<Gemini API Key — from https://aistudio.google.com/app/apikey>",
     "GOOGLE_CLOUD_PROJECT": "<GCP Project ID — e.g. kaist-ai-agent-123456>",
+    "LLM_MODEL": "gemini-2.0-flash",
+    "EMBEDDING_MODEL": "models/text-embedding-004",
     "COSMOS_ENDPOINT": "<Azure Cosmos DB Endpoint URL — from Azure Portal or: az cosmosdb show --name <COSMOS_ACCOUNT_NAME> --resource-group kaist-ai-agent-rg --query documentEndpoint>",
     "COSMOS_DATABASE_NAME": "knowledgebase",
     "STORAGE_ACCOUNT_NAME": "<Azure Storage Account Name>",

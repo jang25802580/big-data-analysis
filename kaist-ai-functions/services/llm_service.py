@@ -5,14 +5,11 @@ from __future__ import annotations
 import logging
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from shared.config import get_config
+from shared.llm import get_llm
 
 logger = logging.getLogger(__name__)
-
-_LLM_MODEL = "gemini-2.0-flash"
 
 _RAG_PROMPT = ChatPromptTemplate.from_messages(
     [
@@ -34,12 +31,7 @@ class LLMService:
     """Wraps ChatGoogleGenerativeAI for retrieval-augmented generation."""
 
     def __init__(self) -> None:
-        config = get_config()
-        self._llm = ChatGoogleGenerativeAI(
-            model=_LLM_MODEL,
-            google_api_key=config.GOOGLE_API_KEY,
-            temperature=0.2,
-        )
+        self._llm = get_llm(temperature=0.2)
         self._chain = _RAG_PROMPT | self._llm
 
     @retry(
