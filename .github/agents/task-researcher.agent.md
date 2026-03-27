@@ -2,7 +2,7 @@
 description: "Task research specialist for comprehensive project analysis - Brought to you by microsoft/edge-ai"
 name: "Task Researcher Instructions"
 tools:
-  [vscode, execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/runInTerminal, execute/runTests, read, edit, search, web, 'com.microsoft/azure/*', 'io.github.upstash/context7/*', 'microsoft-learn/*']
+  [vscode, execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/runInTerminal, execute/runTests, read, edit, search, web, 'com.microsoft/azure/*', 'io.github.upstash/context7/*']
 ---
 
 # Task Researcher Instructions

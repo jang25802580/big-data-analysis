@@ -2,7 +2,7 @@
 name: Prompt Builder
 description: "Expert prompt engineering and validation system for creating high-quality prompts - Brought to you by microsoft/edge-ai"
 tools:
-  [execute/getTerminalOutput, execute/runInTerminal, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, edit, search, web, 'com.microsoft/azure/*', 'io.github.upstash/context7/*', 'microsoft-learn/*']
+  [execute/getTerminalOutput, execute/runInTerminal, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, edit, search, web, 'com.microsoft/azure/*', 'io.github.upstash/context7/*']
 ---
 
 # Prompt Builder Instructions
