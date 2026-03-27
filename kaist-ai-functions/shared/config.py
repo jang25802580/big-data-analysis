@@ -26,7 +26,7 @@ class AppConfig(BaseSettings):
         default="gemini-2.0-flash", description="Gemini model name for LLM (e.g. gemini-2.0-flash)"
     )
     EMBEDDING_MODEL: str = Field(
-        default="models/text-embedding-004", description="Gemini model name for embeddings"
+        default="gemini-embedding-001", description="Gemini model name for embeddings"
     )
 
     # Azure Cosmos DB
